@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "AIMS Better Experience (Dev)",
+  "version": "0.0.1-alpha",
+  "description": "Development build of AIMS Better Experience.",
+  "permissions": ["storage", "activeTab", "declarativeNetRequest"],
+  "host_permissions": ["*://aims1.eac.edu.ph/*"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": "assets/icons/icon.png"
+  },
+  "icons": {
+    "16": "assets/icons/icon.png",
+    "48": "assets/icons/icon.png",
+    "128": "assets/icons/icon.png"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "src/rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"],
+      "css": ["src/content/content.css"]
+    },
+    {
+      "matches": ["*://aims1.eac.edu.ph/*"],
+      "js": [
+        "src/content/init-config.js",
+        "src/content/disable-window-open.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://aims1.eac.edu.ph/eacbed/modules/studList.php*"],
+      "js": ["src/content/studList-bridge.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://aims1.eac.edu.ph/eacbed/modules/studList.php*"],
+      "js": ["src/content/studList-accessibility.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}

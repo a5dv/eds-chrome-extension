@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "AIMS Better Experience",
+  "version": "0.0.0.1",
+  "version_name": "build alpha",
+  "description": "Enhances the AIMS faculty portal so menial tasks do not waste more time than needed.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": "assets/icons/icon.png"
+  },
+  "icons": {
+    "16": "assets/icons/icon.png",
+    "48": "assets/icons/icon.png",
+    "128": "assets/icons/icon.png"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://aims1.eac.edu.ph/*"],
+      "js": [
+        "src/content/init-config.js",
+        "src/content/disable-window-open.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://aims1.eac.edu.ph/eacbed/modules/studList.php*"],
+      "js": ["src/content/studList-bridge.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://aims1.eac.edu.ph/eacbed/modules/studList.php*"],
+      "js": ["src/content/studList-accessibility.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}
