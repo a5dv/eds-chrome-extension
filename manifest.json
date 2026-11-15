@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AIMS Better Experience",
-  "version": "0.0.0.1",
+  "version": "0.0.0.2",
   "version_name": "build alpha",
   "description": "Enhances the AIMS faculty portal so menial tasks do not waste more time than needed.",
   "permissions": [
