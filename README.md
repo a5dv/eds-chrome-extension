@@ -27,6 +27,8 @@ It makes data entry faster. It has no backend and no build step.
 | `npm run dev`  | Opens Chrome with the extension and automatic reload. |
 | `./build.sh`   | Makes the zip for distribution.                       |
 
+GitHub Actions runs `npm run lint` and `npm test` on each pull request and on each push to `main` (`.github/workflows/ci.yml`).
+
 ### Tests
 
 The tests do not connect to AIMS and cannot write data.
