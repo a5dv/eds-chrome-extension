@@ -1,37 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="popup.css">
-  <title>AIMS Better Experience</title>
-</head>
-<body>
-  <div class="container">
-    <h1>AIMS:Better Experience</h1>
-    <p class="subtitle">So EAC Teachers don't waste time</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>AIMS Better Experience</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AIMS:Better Experience</h1>
+      <p class="subtitle">So EAC Teachers don't waste time</p>
 
-    <div id="studlist-settings" class="section" hidden>
-      <h2>Attendance Settings</h2>
-      <label for="paste-direction">Paste Direction</label>
-      <select id="paste-direction">
-        <option value="vertical">Vertical ↓</option>
-        <option value="horizontal">Horizontal →</option>
-      </select>
+      <div id="studlist-settings" class="section" hidden>
+        <h2>Attendance Settings</h2>
+        <label for="paste-direction">Paste Direction</label>
+        <select id="paste-direction">
+          <option value="vertical">Vertical ↓</option>
+          <option value="horizontal">Horizontal →</option>
+        </select>
 
-      <div class="sync-group">
-        <div class="progress-track">
-          <div id="studlist-sync-progresss" class="progress-fill"></div>
+        <div class="sync-group">
+          <div class="progress-track">
+            <div id="studlist-sync-progresss" class="progress-fill"></div>
+          </div>
+          <button id="attendance-sync-btn" class="sync-btn">
+            💾 Sync Changes
+          </button>
+          <span class="sync-hint">Yellow = Staged | Green = Saved</span>
         </div>
-        <button id="attendance-sync-btn" class="sync-btn">💾 Sync Changes</button>
-        <span class="sync-hint">Yellow = Staged | Green = Saved</span>
+      </div>
+
+      <div id="no-settings" class="section">
+        <p class="muted">Navigate to an AIMS page to see available settings.</p>
       </div>
     </div>
-
-    <div id="no-settings" class="section">
-      <p class="muted">Navigate to an AIMS page to see available settings.</p>
-    </div>
-  </div>
-  <script src="popup.js"></script>
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>

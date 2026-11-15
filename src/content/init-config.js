@@ -13,7 +13,9 @@
       writable: false,
       configurable: false,
     });
-  } catch (e) {}
+  } catch {
+    // The property is already defined.
+  }
 
   // 2. Kill the "Right-Click Disabled" annoyance
   // These portals love using oncontextmenu = () => false

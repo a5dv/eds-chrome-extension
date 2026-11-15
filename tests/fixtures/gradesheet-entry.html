@@ -1,0 +1,590 @@
+<!-- Anonymized copy of the period dialog (gs_2/entry.component.php). -->
+<html>
+<head>
+<script src="../js/jquery.js"></script>
+<script>
+  // The grading sheet page defines this function. The save handler calls it.
+  function dochangegradevalue() {}
+</script>
+</head>
+<body>
+<table class="regu">
+  <input size='6' id="HPS" value="100" type="hidden" style="text-align: center;"/>
+  <input size='6' id="LPS" value="50" type="hidden" style="text-align: center;"/>
+  <!-- 
+  <tr>
+    <td><input id="TRANS" checked type="checkbox"/> Transmuted  <button id="upatesetup" style='font-family: tahoma;font-size: 12px;' type="button">Update set-up</button></td>
+  </tr>
+  --> 
+  <input id="TRANS" type="hidden" value=" 1"/> 
+</table>
+
+<!--
+<table>
+  <tr>
+    <td>Maximum Passing Level</td>
+    <td>:</td>
+    <td><input size='6' id="HPS" value="100" style="text-align: center;"/></td>
+  </tr>
+  <tr>
+    <td>Minimum Passing Level</td>
+    <td>:</td>
+    <td><input size='6' id="LPS" value="50" style="text-align: center;"/></td>
+  </tr>
+  <tr>
+    <td><input id="TRANS" checked type="checkbox"/> Transmuted  <button id="upatesetup" style='font-family: tahoma;font-size: 12px;' type="button">Update set-up</button></td>
+  </tr>
+</table>
+-->
+
+<table class="regu" border="1" style="border-collapse: collapse;">
+ <tr>
+   <td class='titlelist' style="text-align: center;"><b>#</b></td>
+   <td class='titlelist' style="text-align: center;"><b>Student No</b></td>
+   <td class='titlelist' style="text-align: center;"><b>Name</b></td>
+  
+   
+   <td class='titlelist' style="text-align: center;"><b>Percentage Equivalent</b></td>
+ </tr>
+<tr><td><b>MALE</b></td></tr><tr>
+  <td><b>1</b>.</td>
+  <td width="100px" align="center">0000C00001</td>
+  <td width="300px" >STUDENT 1</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1001' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>2</b>.</td>
+  <td width="100px" align="center">0000C00002</td>
+  <td width="300px" >STUDENT 2</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1002' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>3</b>.</td>
+  <td width="100px" align="center">0000C00003</td>
+  <td width="300px" >STUDENT 3</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1003' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>4</b>.</td>
+  <td width="100px" align="center">0000C00004</td>
+  <td width="300px" >STUDENT 4</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1004' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>5</b>.</td>
+  <td width="100px" align="center">0000C00005</td>
+  <td width="300px" >STUDENT 5</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1005' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>6</b>.</td>
+  <td width="100px" align="center">0000C00006</td>
+  <td width="300px" >STUDENT 6</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1006' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>7</b>.</td>
+  <td width="100px" align="center">0000C00007</td>
+  <td width="300px" >STUDENT 7</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1007' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>8</b>.</td>
+  <td width="100px" align="center">0000C00008</td>
+  <td width="300px" >STUDENT 8</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1008' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>9</b>.</td>
+  <td width="100px" align="center">0000C00009</td>
+  <td width="300px" >STUDENT 9</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1009' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>10</b>.</td>
+  <td width="100px" align="center">0000C00010</td>
+  <td width="300px" >STUDENT 10</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1010' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>11</b>.</td>
+  <td width="100px" align="center">0000C00011</td>
+  <td width="300px" >STUDENT 11</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1011' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>12</b>.</td>
+  <td width="100px" align="center">0000C00012</td>
+  <td width="300px" >STUDENT 12</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1012' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>13</b>.</td>
+  <td width="100px" align="center">0000C00013</td>
+  <td width="300px" >STUDENT 13</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1013' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>14</b>.</td>
+  <td width="100px" align="center">0000C00014</td>
+  <td width="300px" >STUDENT 14</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1014' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr><td><b>FEMALE</b></td></tr><tr>
+  <td><b>1</b>.</td>
+  <td width="100px" align="center">0000C00015</td>
+  <td width="300px" >STUDENT 15</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1015' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>2</b>.</td>
+  <td width="100px" align="center">0000C00016</td>
+  <td width="300px" >STUDENT 16</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1016' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>3</b>.</td>
+  <td width="100px" align="center">0000C00017</td>
+  <td width="300px" >STUDENT 17</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1017' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>4</b>.</td>
+  <td width="100px" align="center">0000C00018</td>
+  <td width="300px" >STUDENT 18</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1018' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>5</b>.</td>
+  <td width="100px" align="center">0000C00019</td>
+  <td width="300px" >STUDENT 19</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1019' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>6</b>.</td>
+  <td width="100px" align="center">0000C00020</td>
+  <td width="300px" >STUDENT 20</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1020' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>7</b>.</td>
+  <td width="100px" align="center">0000C00021</td>
+  <td width="300px" >STUDENT 21</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1021' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>8</b>.</td>
+  <td width="100px" align="center">0000C00022</td>
+  <td width="300px" >STUDENT 22</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1022' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>9</b>.</td>
+  <td width="100px" align="center">0000C00023</td>
+  <td width="300px" >STUDENT 23</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1023' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>10</b>.</td>
+  <td width="100px" align="center">0000C00024</td>
+  <td width="300px" >STUDENT 24</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1024' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>11</b>.</td>
+  <td width="100px" align="center">0000C00025</td>
+  <td width="300px" >STUDENT 25</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1025' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>12</b>.</td>
+  <td width="100px" align="center">0000C00026</td>
+  <td width="300px" >STUDENT 26</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1026' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>13</b>.</td>
+  <td width="100px" align="center">0000C00027</td>
+  <td width="300px" >STUDENT 27</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1027' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>14</b>.</td>
+  <td width="100px" align="center">0000C00028</td>
+  <td width="300px" >STUDENT 28</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1028' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>15</b>.</td>
+  <td width="100px" align="center">0000C00029</td>
+  <td width="300px" >STUDENT 29</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1029' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>16</b>.</td>
+  <td width="100px" align="center">0000C00030</td>
+  <td width="300px" >STUDENT 30</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1030' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>17</b>.</td>
+  <td width="100px" align="center">0000C00031</td>
+  <td width="300px" >STUDENT 31</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1031' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>18</b>.</td>
+  <td width="100px" align="center">0000C00032</td>
+  <td width="300px" >STUDENT 32</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1032' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>19</b>.</td>
+  <td width="100px" align="center">0000C00033</td>
+  <td width="300px" >STUDENT 33</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1033' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>20</b>.</td>
+  <td width="100px" align="center">0000C00034</td>
+  <td width="300px" >STUDENT 34</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1034' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>21</b>.</td>
+  <td width="100px" align="center">0000C00035</td>
+  <td width="300px" >STUDENT 35</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1035' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>22</b>.</td>
+  <td width="100px" align="center">0000C00036</td>
+  <td width="300px" >STUDENT 36</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1036' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>23</b>.</td>
+  <td width="100px" align="center">0000C00037</td>
+  <td width="300px" >STUDENT 37</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1037' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>24</b>.</td>
+  <td width="100px" align="center">0000C00038</td>
+  <td width="300px" >STUDENT 38</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1038' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>25</b>.</td>
+  <td width="100px" align="center">0000C00039</td>
+  <td width="300px" >STUDENT 39</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1039' size='6' value="" style="text-align: center; "/></td>
+</tr>
+<tr>
+  <td><b>26</b>.</td>
+  <td width="100px" align="center">0000C00040</td>
+  <td width="300px" >STUDENT 40</td>
+  
+  <td style="text-align: center;"><input gtype='mc' cid='' gid='1040' size='6' value="" style="text-align: center; "/></td>
+</tr>
+</table>
+<script>
+$("#addsubcompo").click(function(){
+    var form_data = {
+        job : "new",
+        pid : "1",
+        cid : "",
+        //trans:$("#TRANS").attr("checked") ? 1 : 0
+        trans:$("#TRANS").val()
+    };
+    //$("#shades_backup").fadeIn("300");
+    //$("#shademessage_backup").html("<img src='../images/loading.gif'> Loading...");
+    //centerThis("shadeblock_backup");
+    $.ajax({
+        url:"../gs_2/addsubcomponent.php",
+        type:"POST",
+        data:form_data,
+        success:function(msg){
+            //$("#shademessage_backup").html(msg);
+            //centerThis("shadeblock_backup");
+            $("#pop2").html(msg).dialog({
+                modal: true,
+                width: 'auto',
+                position: ['center',50]
+            });
+        }
+    });
+});
+$("td[gtype='sc']").click(function(){
+    var form_data = {
+        job : "edit",
+        scid : $(this).attr("scid"),
+        pid : "1",
+        cid : "",
+        //trans:$("#TRANS").attr("checked") ? 1 : 0
+        trans:$("#TRANS").val()
+    };
+    
+    //$("#shades_backup").fadeIn("300");
+    //$("#shademessage_backup").html("<img src='../images/loading.gif'> Loading...");
+    //centerThis("shadeblock_backup");
+    $.ajax({
+        url:"../gs_2/addsubcomponent.php",
+        type:"POST",
+        data:form_data,
+        success:function(msg){
+            $("#pop2").html(msg).dialog({
+                modal: true,
+                width: 'auto',
+                position: ['center',50]
+            });
+            //$("#shademessage_backup").html(msg);
+            //centerThis("shadeblock_backup");
+        }
+    });
+});
+$("#upatesetup").click(function(){
+  savedefaultentry();  
+});
+$("input[gtype='mc']").blur(function(){
+   if(!$(this).attr("readonly")){
+    
+    /**
+     temporary na dinisable
+     05162014
+     This function filters the grade,
+     only numeric values is allowed 
+     $(this).val($(this).val().replace(/[^0-9.,]/g,''));
+     */
+    var cset = Array('INC','O','VS','S','FS','DE'); 
+    if(jQuery.inArray($(this).val(),cset)===-1) $(this).val($(this).val().replace(/[^0-9.,]/g,'')); 
+    
+    if($(this).val()!="" && $(this).val()>100){
+     //alert("Cannot accept grade higher than " + Number($(this).attr("rts")));
+     alert("Score is higher than 100.");
+     $(this).val("");
+     $(this).blur();
+    }
+    if($(this).val()!="" && $(this).val()<75) {
+      $(this).css({'color':'red'});
+    } else {
+      $(this).css({'color':'black'});
+    }
+    // else if($(this).val()!="" && $(this).val()<50){
+    //  //alert("Cannot accept grade higher than " + Number($(this).attr("rts")));
+    //  alert("Score must be 50 and above.");
+    //  $(this).val("");
+    //  $(this).blur();
+    // } 
+   var selected_gid = $(this).attr("gid");  
+   var form_data = { 
+       job : "main",
+       pid : "1",
+       gid : $(this).attr("gid"),
+       cid : $(this).attr("cid"),
+       grade: $(this).val(),
+       deptType:"S"
+   };
+    // console.log(form_data); 
+    $.ajax({
+        url:"../gs_2/save.grade.scompo.php",
+        type:"POST",
+        data:form_data,
+        success:function(msg){
+            //console.log(msg);
+            recom_component(selected_gid);
+            dochangegradevalue(msg);     
+        }
+    }); 
+    }
+});
+$("input[gtype='sc']").blur(function(){
+    //$(this).replaceAll("-","");
+    var origv = 0;
+  // if($(this).val()!="D" && $(this).val()!="W" && $(this).val()!="TO" && $(this).val()!="O"){  
+  if($(this).val()!="D" && $(this).val()!="W" && $(this).val()!="TO"){  
+    // var cset = Array('INC','O','VS','S','FS','DE'); 
+    var cset = Array('INC','VS','S','FS','DE'); 
+    if(jQuery.inArray($(this).val(),cset)===-1) $(this).val($(this).val().replace(/[^0-9.,]/g,''));
+    
+    if($("#TRANS").val()==1 && Number($(this).val())>Number($(this).attr("rts"))){
+     //alert("Cannot accept grade higher than " + Number($(this).attr("rts")));
+     alert("Score is higher than the number of items.");
+     $(this).val("");
+     $(this).blur();
+    }
+    
+    var idattr = $(this).attr("gid");
+    $("input[name='origv']").each(function(){
+        if(idattr == $(this).attr("gid")){
+            origv = origv + Number($(this).val());
+        }
+    });
+    
+   var selected_gid = $(this).attr("gid");  
+   var form_data = { 
+       job : "sub",
+       deptType : "S",
+       totalDividend : "0",
+       origv : origv,
+       pid : "1",
+       gid : $(this).attr("gid"),
+       scid : $(this).attr("scid"),
+       cid : $(this).attr("cid"),
+       grade: $(this).val(),
+       hps : $("#HPS").val(),
+       lps : $("#LPS").val(),
+       //trans:$("#TRANS").attr("checked") ? 1 : 0
+       trans:$("#TRANS").val()
+   };
+    $.ajax({
+        url:"../gs_2/save.grade.scompo.php",
+        type:"POST",
+        data:form_data,
+        success:function(msg){
+             //alert($(msg).find("debug").text());
+           recom_component(selected_gid);
+           dochangegradevalue(msg);     
+        }
+    }); 
+  }
+});
+/**
+ * this will recompute the score per row
+ */
+function recom_component(grade_ID){
+   var hps = Number($("#HPS").val());  
+   var lps = Number($("#LPS").val());
+   var origv = 0;
+   var hasFDA = false;
+   var hasNA = false;
+   var hasINC = false;
+   //var transmuted = $("#TRANS").attr("checked");
+   var transmuted = $("#TRANS").val()==1; 
+   /** main component */  
+   $("input[gtype='mc']").each(function(){
+   if($(this).attr("gid")==grade_ID){
+           var total = 0;
+           var tgrade = 0; 
+           var fingrade = 0;
+           var ccol = 0;
+           var ccolw = 0;
+           var ttgrade = 0;
+           
+           /** sub component */
+           $("input[gtype='sc']").each(function(){
+           if($(this).attr("gid")==grade_ID){
+               if(!hasFDA && $(this).val()=="FDA") hasFDA=true; 
+               if(!hasNA && $(this).val()=="NA") hasNA=true;
+               if(!hasINC && $(this).val()=="INC") hasINC=true;
+                
+               if(transmuted){
+                                  total ++;
+                 ttgrade += Number($(this).val());
+                 tgrade   += Number(Number($(this).val()) * Number((Number(lps))/(Number($(this).attr("rts"))))) + Number(lps);   
+                                  
+               }else{
+                 fingrade += Number((Number($(this).attr("rts"))/100) * Number($(this).val()));
+               }
+               if($(this).val()!="") ccolw++;
+               ccol++; 
+           }
+           });
+           /*
+           $("input[name='origv']").each(function(){
+              origv = origv + Number($(this).val());
+           });
+           */
+           var idattr = $(this).attr("gid");
+            $("input[name='origv']").each(function(){
+                if(idattr == $(this).attr("gid")){
+                    origv = origv + Number($(this).val());
+                }
+            });
+           
+           var hasallgrade = ccol==ccolw; 
+
+           if(hasNA){
+                fingrade = "NA";
+           }else if(hasINC){
+                fingrade = "INC";
+           }else if(hasFDA){
+                fingrade = "FDA";
+           }else if(transmuted&&ccol>0){
+                                  fingrade = Number((Number(origv)/Number("0"))*100).toFixed(2); 
+              
+              if(isNaN(tgrade)) fingrade ="";     
+           }else if(!transmuted&&ccol>0){
+              if(isNaN(fingrade)) fingrade =""; 
+              else{
+                fingrade = Number(fingrade).toFixed(2);
+              }
+           }else{
+              fingrade = $(this).val(); 
+           }
+           
+           if(hasallgrade) $(this).val(fingrade);
+   }
+   }); 
+}
+function savedefaultentry(){
+    var form_data = {
+        pid : "1",
+        cid : "",
+        hps : $("#HPS").val(),
+        lps : $("#LPS").val(),
+        //trans:$("#TRANS").attr("checked") ? 1 : 0
+       trans:$("#TRANS").val()
+    }; 
+    $.ajax({
+        url:"../gs_2/save.componentdetails.php",
+        type:"POST",
+        data:form_data,
+        success:function(msg){
+            displaycomponentdetails("");
+        }
+    }); 
+}
+//savedefaultentry();
+</script>
+</body>
+</html>
