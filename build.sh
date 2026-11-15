@@ -7,10 +7,6 @@ OUTPUT="aims-better-experience-v${VERSION}.zip"
 zip -r "$OUTPUT" \
   manifest.json \
   assets/ \
-  src/ \
-  -x "manifest.dev.json" \
-  -x "src/content/content.js" \
-  -x "src/content/content.css" \
-  -x "src/rules.json"
+  src/
 
 echo "✅ Built: $OUTPUT"

@@ -69,7 +69,7 @@
 
         input.style.backgroundColor = '#d4edda'; // Success Green
         dirtyInputs.delete(input);
-      } catch (err) {
+      } catch {
         input.style.backgroundColor = '#ffccd5'; // Error Red
         console.error(`Failed to sync SNO: ${formData.sno}`);
       }
