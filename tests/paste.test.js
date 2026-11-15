@@ -58,6 +58,10 @@ test('grade paste saves the valid grades of an Excel column', async () => {
   );
   const inputs = page.locator("input[gtype='mc']");
 
+  // The site loads the dialog inputs with this request.
+  await page.evaluate(() => $.post('../gs_2/entry.component.php'));
+  await page.getByText('AIMS Better Experience is ready').waitFor();
+
   await inputs.first().focus();
   await paste(page, 'A\t90\r\nB\t\r\nC\t101\r\nD\tINC\r\n');
   await page.waitForTimeout(500);
@@ -66,7 +70,7 @@ test('grade paste saves the valid grades of an Excel column', async () => {
     saves.map((s) => [s.gid, s.grade]),
     [
       ['1001', '90'],
-      ['1004', 'INC'],
+      ['1003', 'INC'],
     ],
   );
   assert.deepStrictEqual(
@@ -75,9 +79,9 @@ test('grade paste saves the valid grades of an Excel column', async () => {
     ),
     [
       ['90', 'rgb(212, 237, 218)'], // saved
-      ['', ''], // empty cell: no change
       ['', 'rgb(255, 204, 213)'], // above 100: not saved
-      ['INC', 'rgb(212, 237, 218)'], // saved
+      ['INC', 'rgb(212, 237, 218)'], // saved. The blank row is ignored.
+      ['', ''],
     ],
   );
 

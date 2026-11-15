@@ -69,12 +69,14 @@ Grade paste:
 
 1. Open **Grading Sheet**, select a period and click **Search**.
 2. Click a section. Then click the period column header.
-3. Copy three grades from an Excel column.
-4. Click the grade input of the first student and press Ctrl+V.
-5. Make sure that the three inputs become green.
-6. Close the dialog and open the section again. Make sure that the three grades are there.
-7. Paste a column that has the value `101`. Make sure that this input becomes red and stays empty.
-8. Press Arrow Down, Arrow Up and Enter. Make sure that the focus moves between students.
+3. Make sure that the green hint line of the extension is above the student list.
+4. Copy three grades from an Excel column.
+5. Click the grade input of the first student and press Ctrl+V.
+6. Make sure that the three inputs become green.
+7. Close the dialog and open the section again. Make sure that the three grades are there.
+8. Paste a column that has a blank row. Make sure that no student is skipped.
+9. Paste a column that has the value `101`. Make sure that this input becomes red and stays empty.
+10. Press Arrow Down, Arrow Up and Enter. Make sure that the focus moves between students.
 
 Attendance paste:
 

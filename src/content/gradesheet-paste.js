@@ -9,27 +9,28 @@
     (/^\d+(\.\d+)?$/.test(val) && Number(val) <= 100);
 
   // --- 1. PASTE A COLUMN FROM EXCEL ---
-  // Row 1 goes to the focused student. The next rows go to the students below.
+  // Value 1 goes to the focused student. The next values go to the students below.
+  // Blank rows are ignored. In Excel they are divider rows (MALE / FEMALE).
   const handlePaste = async (e) => {
     const active = document.activeElement;
     if (!active.matches(GRADE_INPUT)) return;
 
     e.preventDefault();
-    const rows = e.clipboardData
+    // If the copy has more than one column, the grade is the last column.
+    const values = e.clipboardData
       .getData('text')
-      .replace(/\r?\n$/, '')
-      .split(/\r?\n/);
+      .split(/\r?\n/)
+      .map((row) => row.split('\t').pop().trim())
+      .filter((val) => val !== '');
     const inputs = Array.from(document.querySelectorAll(GRADE_INPUT));
     const start = inputs.indexOf(active);
 
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 0; i < values.length; i++) {
       const input = inputs[start + i];
       if (!input) break;
+      if (input.readOnly) continue;
 
-      // If the copy has more than one column, the grade is the last column.
-      const val = rows[i].split('\t').pop().trim();
-      // An empty cell does not erase a saved grade.
-      if (val === '' || input.readOnly) continue;
+      const val = values[i];
 
       if (!isValidGrade(val)) {
         input.style.backgroundColor = '#ffccd5'; // Error Red
@@ -45,8 +46,21 @@
     }
   };
 
-  // --- 2. SAVE RESULT ---
+  // --- 2. READY HINT AND SAVE RESULT ---
   $(document).ajaxComplete((e, xhr, settings) => {
+    // The period dialog loaded its inputs.
+    if (settings.url.includes('entry.component.php')) {
+      $(GRADE_INPUT)
+        .not('[readonly]')
+        .first()
+        .closest('table')
+        .before(
+          '<p style="background:#d4edda;padding:6px;margin:0 0 6px">' +
+            '✅ AIMS Better Experience is ready. Click the first grade and ' +
+            'press Ctrl+V to paste a column from Excel.</p>',
+        );
+      return;
+    }
     if (!settings.url.includes('save.grade.scompo.php')) return;
 
     const gid = new URLSearchParams(settings.data).get('gid');
