@@ -1,0 +1,39 @@
+name: Publish
+
+# Push a tag such as v0.0.0.4, or start the workflow manually.
+# The upload goes to the Chrome Web Store for review.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run lint
+      - run: npm test
+      - name: Make sure that the tag is the manifest version
+        if: github.ref_type == 'tag'
+        run: |
+          VERSION=$(node -p "require('./manifest.json').version")
+          test "$GITHUB_REF_NAME" = "v$VERSION" || {
+            echo "Tag $GITHUB_REF_NAME is not v$VERSION from manifest.json"
+            exit 1
+          }
+      - run: ./build.sh
+      - name: Upload and submit for review
+        run: npx --yes chrome-webstore-upload-cli@4.0.2 --source aims-better-experience-v*.zip
+        env:
+          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
+          PUBLISHER_ID: ${{ secrets.PUBLISHER_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
