@@ -105,11 +105,11 @@ Use a sheet that is not finalized. Correct the test values after the test.
 
 `.github/workflows/publish.yml` runs the automated checks, makes the zip and submits it to the Chrome Web Store for review.
 
-1. Merge the version change to `main`.
-2. Run `git tag v0.0.0.4 && git push origin v0.0.0.4`. Use the version from `manifest.json`.
+1. Do the manual test. A merge that changes the version publishes it.
+2. Merge the version change to `main`.
 3. Open the **Actions** tab and make sure that the **Publish** run is green.
 
-The run stops if the tag is not the manifest version. You can also start the workflow from the **Actions** tab with **Run workflow**.
+After the upload, the workflow creates the tag `v<version>`. If that tag exists, the workflow publishes nothing. If the upload fails, the workflow creates no tag. Fix the cause and start the workflow again from the **Actions** tab with **Run workflow**.
 
 #### One-time setup of the secrets
 
