@@ -99,7 +99,31 @@ Use a sheet that is not finalized. Correct the test values after the test.
 1. Increase `version` in `manifest.json`. The Chrome Web Store refuses a version that it already has.
 2. Run `./build.sh`.
 3. Load the zip content one time with **Load unpacked** to make sure that the package starts.
-4. Upload the zip.
+4. Upload the zip, or use the **Publish** workflow.
+
+### 4. Publish with GitHub Actions
+
+`.github/workflows/publish.yml` runs the automated checks, makes the zip and submits it to the Chrome Web Store for review.
+
+1. Merge the version change to `main`.
+2. Run `git tag v0.0.0.4 && git push origin v0.0.0.4`. Use the version from `manifest.json`.
+3. Open the **Actions** tab and make sure that the **Publish** run is green.
+
+The run stops if the tag is not the manifest version. You can also start the workflow from the **Actions** tab with **Run workflow**.
+
+#### One-time setup of the secrets
+
+1. Open [Google Cloud Console](https://console.cloud.google.com/) with the Google account that owns the extension. Make a project.
+2. Enable the **Chrome Web Store API**.
+3. Configure the **OAuth consent screen** with the type **External**. Set the publishing status to **In production**. In **Testing**, the refresh token expires after 7 days.
+4. Make an **OAuth client ID** with the type **Web application**. Add `https://developers.google.com/oauthplayground` as an authorized redirect URI.
+5. Open the [OAuth Playground](https://developers.google.com/oauthplayground). Click the gear icon, select **Use your own OAuth credentials** and enter the client ID and the client secret.
+6. In step 1, enter the scope `https://www.googleapis.com/auth/chromewebstore` and click **Authorize APIs**. Log in with the owner account.
+7. In step 2, click **Exchange authorization code for tokens**. Copy the refresh token.
+8. In the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole), copy the extension ID and the publisher ID.
+9. In the GitHub repo, open **Settings > Secrets and variables > Actions**. Add these secrets: `EXTENSION_ID`, `PUBLISHER_ID`, `CLIENT_ID`, `CLIENT_SECRET`, `REFRESH_TOKEN`.
+
+Pull requests from forks cannot read the secrets.
 
 ## How AIMS works
 
